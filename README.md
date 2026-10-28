@@ -2,7 +2,7 @@
 
 Bayesian spatial and spatiotemporal analyses using R and INLA.
 
-**Live site:** https://YOUR_USERNAME.github.io/spatial-epi-portfolio/
+**Live site:** https://trishnakisiju15.github.io/spatial-epi-portfolio/
 
 | Analysis | Setting | Focus |
 |----------|---------|--------|
