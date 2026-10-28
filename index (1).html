@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spatial epidemiology portfolio · Trishna Kisiju</title>
+<style>
+:root {
+  --bg: #faf5e9;
+  --text: #4a3a2c;
+  --accent: #8a6240;
+  --accent2: #9c7350;
+  --border: #e3d6bf;
+  --soft: #f1e6d2;
+  --soft2: #f6eedd;
+  --card: #fffdf8;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 22px 70px;
+}
+header h1 {
+  font-size: 26px;
+  color: var(--accent);
+  margin: 0 0 6px;
+  line-height: 1.25;
+}
+header .sub {
+  color: #7d6a58;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+.keywords {
+  font-size: 14px;
+  color: #5c4a3a;
+  margin: 0 0 28px;
+  line-height: 1.5;
+}
+.keywords b {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .cards { grid-template-columns: 1fr 1fr; }
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  border-color: var(--accent2);
+  box-shadow: 0 2px 8px rgba(138, 98, 64, 0.12);
+}
+.card h2 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: var(--accent);
+}
+.card p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #5c4a3a;
+}
+.card .meta {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #7d6a58;
+}
+footer {
+  margin-top: 40px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 12.5px;
+  color: #7d6a58;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Spatial epidemiology portfolio</h1>
+    <p class="sub">Trishna Kisiju · Bayesian spatial and spatiotemporal analyses in R (INLA)</p>
+    <p class="keywords"><b>Keywords:</b> spatial epidemiology, Bayesian hierarchical models, INLA, BYM, Moran’s I, relative risk</p>
+  </header>
+
+  <div class="cards">
+    <a class="card" href="COVID_Nepal_portfolio.html">
+      <h2>COVID-19 incidence in Nepal</h2>
+      <p>District-level clustering and determinants of COVID-19 incidence across 77 districts.</p>
+      <p class="meta">Nepal · 77 districts · NB GLM + BYM</p>
+    </a>
+
+    <a class="card" href="Pneumonia_Korea_portfolio.html">
+      <h2>Pneumonia mortality in Korea</h2>
+      <p>Municipality-level spatial risk and a 2015–2019 spatiotemporal extension.</p>
+      <p class="meta">Korea · 250 municipalities · NB GLM + BYM</p>
+    </a>
+
+    <a class="card" href="Suicide_Korea_portfolio.html">
+      <h2>Suicide mortality in Korea, 2010–2021</h2>
+      <p>Nationwide spatiotemporal analysis stratified by age (all ages, under 65, 65+).</p>
+      <p class="meta">Korea · 250 municipalities · BYM / ICAR</p>
+    </a>
+
+    <a class="card" href="Air_pollution_under65_portfolio.html">
+      <h2>Air pollution and mortality under 65</h2>
+      <p>Long-term pollutant exposure and cardiovascular, cerebrovascular, and pneumonia deaths.</p>
+      <p class="meta">Korea · under 65 · single pollutants + PCA</p>
+    </a>
+
+    <a class="card" href="Nepal_dengue_SCI_portfolio.html">
+      <h2>Dengue and the Suitable Conditions Index</h2>
+      <p>Climate suitability (SCI) and dengue incidence in Nepal, 2022–2024.</p>
+      <p class="meta">Nepal · 77 districts · NB, logistic LOO, spatiotemporal INLA</p>
+    </a>
+  </div>
+</div>
+</body>
+</html>
