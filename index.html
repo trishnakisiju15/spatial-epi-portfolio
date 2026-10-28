@@ -1,141 +1,338 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spatial epidemiology portfolio · Trishna Kisiju</title>
+<meta name="description" content="Trishna Kisiju's research portfolio in spatial epidemiology, Bayesian disease mapping, and public health.">
+<title>Trishna Kisiju | Spatial Epidemiology</title>
 <style>
 :root {
-  --bg: #faf5e9;
-  --text: #4a3a2c;
-  --accent: #8a6240;
-  --accent2: #9c7350;
-  --border: #e3d6bf;
-  --soft: #f1e6d2;
-  --soft2: #f6eedd;
-  --card: #fffdf8;
+  --bg: #f8f3e9;
+  --paper: #fffdf8;
+  --text: #43352a;
+  --muted: #796958;
+  --accent: #795638;
+  --accent-dark: #5b402b;
+  --border: #e4d7c5;
+  --soft: #eee2d0;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.7;
 }
+a { color: inherit; }
 .wrap {
-  max-width: 920px;
+  width: min(1060px, calc(100% - 40px));
   margin: 0 auto;
-  padding: 48px 22px 70px;
 }
-header h1 {
-  font-size: 26px;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+.brand {
+  font-weight: 750;
+  letter-spacing: .06em;
+  font-size: 13px;
+  color: var(--accent-dark);
+}
+.navlinks { display: flex; gap: 22px; flex-wrap: wrap; }
+.navlinks a {
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.navlinks a:hover { color: var(--accent-dark); }
+.hero {
+  padding: 76px 0 66px;
+  max-width: 790px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--accent);
-  margin: 0 0 6px;
-  line-height: 1.25;
 }
-header .sub {
-  color: #7d6a58;
-  margin: 0 0 8px;
-  font-size: 14px;
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.08;
+  letter-spacing: -.035em;
+  font-weight: 500;
+  margin: 18px 0;
 }
-.keywords {
-  font-size: 14px;
-  color: #5c4a3a;
-  margin: 0 0 28px;
-  line-height: 1.5;
+.hero p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 17px;
+  margin: 0 0 24px;
 }
-.keywords b {
-  color: var(--accent);
-  font-weight: 600;
-  margin-right: 0.25rem;
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.button {
+  display: inline-block;
+  padding: 11px 17px;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 650;
 }
+.button.primary { background: var(--accent-dark); color: white; }
+.button.secondary { background: transparent; color: var(--accent-dark); }
+.button:hover { opacity: .84; }
+.focusline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 32px;
+}
+.focusline span {
+  border: 1px solid var(--border);
+  background: rgba(255,253,248,.6);
+  border-radius: 99px;
+  padding: 5px 11px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.section { padding: 48px 0 58px; border-top: 1px solid var(--border); }
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(27px, 4vw, 36px);
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 8px 0 0;
+}
+.section-intro { color: var(--muted); font-size: 14px; max-width: 490px; margin: 10px 0 0; }
 .cards {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-}
-@media (min-width: 640px) {
-  .cards { grid-template-columns: 1fr 1fr; }
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
 }
 .card {
-  background: var(--card);
+  display: flex;
+  flex-direction: column;
+  min-height: 215px;
+  background: var(--paper);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
+  border-radius: 8px;
+  padding: 23px;
   text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 .card:hover {
-  border-color: var(--accent2);
-  box-shadow: 0 2px 8px rgba(138, 98, 64, 0.12);
+  transform: translateY(-3px);
+  border-color: #b89a78;
+  box-shadow: 0 8px 22px rgba(76,54,34,.07);
 }
-.card h2 {
-  margin: 0 0 6px;
-  font-size: 16px;
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+.number {
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: #9a8168;
+}
+.tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
   color: var(--accent);
+  background: var(--soft);
+  border-radius: 3px;
+  padding: 4px 7px;
 }
-.card p {
-  margin: 0;
-  font-size: 13.5px;
-  color: #5c4a3a;
+.card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: 22px 0 9px;
 }
-.card .meta {
-  margin-top: 8px;
-  font-size: 12px;
-  color: #7d6a58;
+.card p { margin: 0; font-size: 13px; color: var(--muted); }
+.card .meta { margin-top: auto; padding-top: 20px; font-size: 11px; color: var(--accent); }
+.arrow { font-size: 17px; margin-left: 5px; }
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.skill {
+  padding: 19px;
+  background: rgba(255,253,248,.65);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+.skill h3 { font-size: 14px; margin: 0 0 8px; color: var(--accent-dark); }
+.skill p { margin: 0; color: var(--muted); font-size: 12px; }
+.about {
+  max-width: 720px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  line-height: 1.65;
 }
 footer {
-  margin-top: 40px;
-  padding-top: 14px;
   border-top: 1px solid var(--border);
-  font-size: 12.5px;
-  color: #7d6a58;
+  padding: 24px 0 35px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 12px;
+}
+footer a { text-decoration: none; }
+@media (max-width: 650px) {
+  .wrap { width: min(100% - 30px, 1060px); }
+  nav { align-items: flex-start; flex-direction: column; }
+  .navlinks { gap: 16px; }
+  .hero { padding: 54px 0 46px; }
+  .cards, .skills { grid-template-columns: 1fr; }
+  .card { min-height: 190px; }
+  .section-head { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <h1>Spatial epidemiology portfolio</h1>
-    <p class="sub">Trishna Kisiju · Bayesian spatial and spatiotemporal analyses in R (INLA)</p>
-    <p class="keywords"><b>Keywords:</b> spatial epidemiology, Bayesian hierarchical models, INLA, BYM, Moran’s I, relative risk</p>
-  </header>
+  <nav>
+    <a class="brand" href="#top" style="text-decoration:none">TRISHNA KISIJU</a>
+    <div class="navlinks">
+      <a href="#research">Research</a>
+      <a href="#methods">Methods</a>
+      <a href="#about">About</a>
+    </div>
+  </nav>
 
-  <div class="cards">
-    <a class="card" href="COVID_Nepal_portfolio.html">
-      <h2>COVID-19 incidence in Nepal</h2>
-      <p>District-level clustering and determinants of COVID-19 incidence across 77 districts.</p>
-      <p class="meta">Nepal · 77 districts · NB GLM + BYM</p>
-    </a>
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow">Public health · Spatial epidemiology</div>
+      <h1>Understanding where disease occurs, and why.</h1>
+      <p>
+        I work with spatial and spatiotemporal epidemiological methods to
+        investigate patterns of disease, environmental exposures, and health
+        outcomes. My research combines geographic data, statistical modelling,
+        and public health questions.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#research">Explore my research ↓</a>
+        <a class="button secondary" href="#methods">Methods &amp; skills</a>
+      </div>
+      <div class="focusline">
+        <span>Spatial epidemiology</span>
+        <span>Bayesian modelling</span>
+        <span>Disease mapping</span>
+        <span>R · INLA</span>
+      </div>
+    </section>
 
-    <a class="card" href="Pneumonia_Korea_portfolio.html">
-      <h2>Pneumonia mortality in Korea</h2>
-      <p>Municipality-level spatial risk and a 2015–2019 spatiotemporal extension.</p>
-      <p class="meta">Korea · 250 municipalities · NB GLM + BYM</p>
-    </a>
+    <section class="section" id="research">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Selected work</div>
+          <h2>Research projects</h2>
+          <p class="section-intro">Explore the research questions, analytical approaches, and results across my epidemiology projects.</p>
+        </div>
+      </div>
 
-    <a class="card" href="Suicide_Korea_portfolio.html">
-      <h2>Suicide mortality in Korea, 2010–2021</h2>
-      <p>Nationwide spatiotemporal analysis stratified by age (all ages, under 65, 65+).</p>
-      <p class="meta">Korea · 250 municipalities · BYM / ICAR</p>
-    </a>
+      <div class="cards">
+        <a class="card" href="COVID_Nepal_portfolio.html">
+          <div class="card-top"><span class="number">01 / NEPAL</span><span class="tag">Spatial analysis</span></div>
+          <h3>COVID-19 incidence in Nepal <span class="arrow">↗</span></h3>
+          <p>District-level clustering and determinants of COVID-19 incidence across 77 districts.</p>
+          <div class="meta">NB GLM · BYM · Moran’s I</div>
+        </a>
 
-    <a class="card" href="Air_pollution_under65_portfolio.html">
-      <h2>Air pollution and mortality under 65</h2>
-      <p>Long-term pollutant exposure and cardiovascular, cerebrovascular, and pneumonia deaths.</p>
-      <p class="meta">Korea · under 65 · single pollutants + PCA</p>
-    </a>
+        <a class="card" href="Pneumonia_Korea_portfolio.html">
+          <div class="card-top"><span class="number">02 / KOREA</span><span class="tag">Disease mapping</span></div>
+          <h3>Pneumonia mortality in Korea <span class="arrow">↗</span></h3>
+          <p>Municipality-level spatial risk and a 2015–2019 spatiotemporal extension.</p>
+          <div class="meta">NB GLM · BYM · Spatiotemporal analysis</div>
+        </a>
 
-    <a class="card" href="Nepal_dengue_SCI_portfolio.html">
-      <h2>Dengue and the Suitable Conditions Index</h2>
-      <p>Climate suitability (SCI) and dengue incidence in Nepal, 2022–2024.</p>
-      <p class="meta">Nepal · 77 districts · NB, logistic LOO, spatiotemporal INLA</p>
-    </a>
-  </div>
+        <a class="card" href="Suicide_Korea_portfolio.html">
+          <div class="card-top"><span class="number">03 / KOREA</span><span class="tag">Time trends</span></div>
+          <h3>Suicide mortality in Korea, 2010–2021 <span class="arrow">↗</span></h3>
+          <p>Nationwide spatiotemporal analysis stratified by age: all ages, under 65, and 65+.</p>
+          <div class="meta">BYM · ICAR · Age-stratified analysis</div>
+        </a>
+
+        <a class="card" href="Air_pollution_under65_portfolio.html">
+          <div class="card-top"><span class="number">04 / KOREA</span><span class="tag">Environmental health</span></div>
+          <h3>Air pollution and mortality under 65 <span class="arrow">↗</span></h3>
+          <p>Long-term pollutant exposure and cardiovascular, cerebrovascular, and pneumonia deaths.</p>
+          <div class="meta">Pollutant models · PCA</div>
+        </a>
+
+        <a class="card" href="Nepal_dengue_SCI_portfolio.html">
+          <div class="card-top"><span class="number">05 / NEPAL</span><span class="tag">Ongoing research</span></div>
+          <h3>Dengue and the Suitable Conditions Index <span class="arrow">↗</span></h3>
+          <p>Climate suitability and dengue incidence in Nepal, 2022–2024.</p>
+          <div class="meta">SCI · Negative binomial · INLA</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="methods">
+      <div class="eyebrow">Analytical toolkit</div>
+      <h2>Methods &amp; skills</h2>
+      <p class="section-intro" style="margin-bottom:24px">Methods used across my spatial and epidemiological analyses.</p>
+      <div class="skills">
+        <div class="skill">
+          <h3>Spatial statistics</h3>
+          <p>Global spatial autocorrelation, Moran’s I, local hotspot analysis, choropleth mapping, and geographic data preparation.</p>
+        </div>
+        <div class="skill">
+          <h3>Statistical modelling</h3>
+          <p>Negative binomial regression, Bayesian hierarchical models, BYM, ICAR, and relative-risk estimation.</p>
+        </div>
+        <div class="skill">
+          <h3>Tools &amp; workflow</h3>
+          <p>R, R-INLA, spatial data workflows, model diagnostics, data visualisation, and reproducible analysis.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="eyebrow">Research approach</div>
+      <h2>From data to public health insight</h2>
+      <p class="about">
+        My work focuses on identifying geographic patterns in disease and
+        investigating how population, environmental, and socioeconomic factors
+        are associated with health outcomes. I use spatial analysis to help
+        make these patterns more visible and interpretable.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Trishna Kisiju · Spatial epidemiology portfolio</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
 </div>
 </body>
 </html>
